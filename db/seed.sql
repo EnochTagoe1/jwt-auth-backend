@@ -1,21 +1,23 @@
 -- db/seed.sql
 \c jwt_auth
 
-INSERT INTO users (username, id, first_name, last_name, location, email, password_hash, created_at, member_since)
+INSERT INTO users (username, first_name, last_name, location, email, password_hash, created_at, member_since)
 VALUES 
-('demo', '$2b$10$.z68x3792U9LyBwmghfsKexstMO7i0SeNCoDmeJa7bEFPQBnZU3bK', 'demo@example.com', NOW(), NOW());
-('user1', '1000', 'Mike', 'Brown', 'New York, NY', 'mb@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW()),
+('demo', 'demoname','demosurname','location', 'demo@example.com', '$2b$10$.z68x3792U9LyBwmghfsKexstMO7i0SeNCoDmeJa7bEFPQBnZU3bK' , NOW(), NOW()),
+('user1', 'Mike', 'Brown', 'New York, NY', 'mb@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW()),
 
-('carfanatic', '1001', 'John', 'Doe', 'Newark, NJ', 'jdoe@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW()),
+('carfanatic', 'John', 'Doe', 'Newark, NJ', 'jdoe@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW()),
 
-('coolride', '1002', 'Jane', 'Doe', 'Atlanta, GA', 'janedoe@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW())
+('coolride', 'Jane', 'Doe', 'Atlanta, GA', 'janedoe@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW());
 
 --db seed for cars--
 
-INSERT INTO cars (id, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
+INSERT INTO cars (user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
 VALUES 
-('2CVY9357', 1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000',['image'], 'TRUE');
-
+(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
+(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
+(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
+(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
 --- run db:init again
 -- run db:seed again
 -- test by logging in on the frontend

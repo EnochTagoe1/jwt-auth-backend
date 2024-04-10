@@ -27,11 +27,11 @@ CREATE TABLE cars (
     user_id integer REFERENCES users(id),
     make VARCHAR NOT NULL,
     model VARCHAR NOT NULL,
-    make_year DATE NOT NULL,
+    make_year INTEGER NOT NULL,
     color VARCHAR,
-    cylinders integer NOT NULL,
+    cylinders VARCHAR NOT NULL,
     price integer NOT NULL,
-    image_path NULL,
+    image_path TEXT,
     is_favorite boolean
     --ON DELETE CASCADE--
 );
