@@ -12,9 +12,15 @@ VALUES
 
 --db seed for cars--
 
-INSERT INTO cars (id, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)--img??--
+INSERT INTO cars (id, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
 VALUES 
-('2jue9377', 1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','image', 'TRUE')--id*/img-frontend??--
+('2CVY9357', 1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000',['image'], 'TRUE');
+
+--- run db:init again
+-- run db:seed again
+-- test by logging in on the frontend
+--**DID NOT RUN ABOVE CMD YET***???
+
 
 --seed for shows--
 -- INSERT INTO shows (id, show_date, location, PRICE, will_attend)

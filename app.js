@@ -20,7 +20,7 @@ cron.schedule("*/5 * * * *", () => {
 // MIDDLEWARE change origin to your frontend netlify address for deployment
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000",//chose 3333***???
     // origin: "https://main--jwt-auth-10-3.netlify.app/",
   })
 );
@@ -31,7 +31,7 @@ app.use("/api/auth", authController);
 
 // ROUTES
 app.get("/", (_req, res) => {
-  res.send("Welcome to JWT Auth!");
+  res.send("Welcome to JWT Auth!");//Welcome to Whip Wheels???
 });
 
 // 404 PAGE
