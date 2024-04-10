@@ -15,9 +15,9 @@ VALUES
 INSERT INTO cars (user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
 VALUES 
 (1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
-(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
-(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
-(1, 'CHEVY', 'CORVETTE', '1957', 'RED', '8CYL','90000','imageurl', 'TRUE');
+(1, 'BENZ', 'MAYBACH', '1987', 'SILVER', '12CYL','120000','imageurl', 'FALSE');
+(1, 'FORD', 'MUSTANG', '1970', 'BLUE', '8CYL','75000','imageurl', 'TRUE');
+(1, 'VW', 'BEETLE', '1973', 'GOLD', '4CYL','80000','imageurl', 'FALSE');
 --- run db:init again
 -- run db:seed again
 -- test by logging in on the frontend
