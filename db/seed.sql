@@ -18,10 +18,7 @@ VALUES
 (2, 'BENZ', 'MAYBACH', '1987', 'SILVER', '12CYL','120000','imageurl', FALSE),
 (3, 'FORD', 'MUSTANG', '1970', 'BLUE', '8CYL','75000','imageurl', TRUE),
 (4, 'VW', 'BEETLE', '1973', 'GOLD', '4CYL','80000','imageurl', FALSE);
---- run db:init again
--- run db:seed again
--- test by logging in on the frontend
---**DID NOT RUN ABOVE CMD YET***???
+
 
 
 --seed for shows--
@@ -37,4 +34,3 @@ VALUES
 --     PRICE integer
 --     will_attend boolean
 -- }
---1)demo user credentials/hash 2)npm i dependencies? 3)seed user pasword-hash correct?? 4).env here or front?? 5)user.js-CreateUser edits 6)when db:init db:seed??

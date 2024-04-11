@@ -31,7 +31,7 @@ app.use("/api/auth", authController);
 
 // ROUTES
 app.get("/", (_req, res) => {
-  res.send("Welcome to JWT Auth!");//Welcome to Whip Wheels???
+  res.send("Welcome to Wits & Wheels!");//Welcome to Whip Wheels???
 });
 
 // 404 PAGE
