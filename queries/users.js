@@ -8,6 +8,7 @@ const findUserByUsername = async (username) => {
   try {
     const query = "SELECT * FROM users WHERE username = $1";
 
+    
     const user = await db.oneOrNone(query, username);
 
     return user;
@@ -17,13 +18,10 @@ const findUserByUsername = async (username) => {
   }
 };
 
-const createUser = async ({ username, id, first_name, last_name, location, email, password_hash, created_at, member_since }) => {
-  const query = `
-      INSERT INTO users (username, id, first_name, last_name, location, email, password_hash, created_at, member_since)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,$9)
-      RETURNING username, id, first_name, last_name, location, email, password_hash, created_at, member_since; 
-    `;
-  const newUser = await db.one(query, [username, id, first_name, last_name, location, email, password_hash, created_at, member_since]);
+const createUser = async ({ username, email, password_hash}) => {
+  const newUser = await db.one("INSERT INTO users (username, email, password_hash) VALUES ($1, $2, $3) RETURNING * " ,[username, email, password_hash]
+    );
+  // const newUser = await db.one(query, [username, id, first_name, last_name, location, email, password_hash, created_at, member_since]);
   return newUser;
 };
 
