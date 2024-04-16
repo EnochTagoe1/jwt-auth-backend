@@ -4,9 +4,9 @@
 INSERT INTO users (username, first_name, last_name, location, email, password_hash, created_at, member_since)
 VALUES 
 ('demo', 'demoname','demosurname','location', 'demo@example.com', '$2b$10$.z68x3792U9LyBwmghfsKexstMO7i0SeNCoDmeJa7bEFPQBnZU3bK' , NOW(), NOW()),
-('user1', 'Mike', 'Brown', 'New York, NY', 'mb@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW()),
+('user1', 'Mike', 'Brown', 'New York, NY', 'mb@email.com', '$2b$10$EQOh0A8e5uMHa2.hxKkX/uqxarmRtoQa/Iz1v2k/gALCL5nHdzgHa', NOW(), NOW()),
 
-('carfanatic', 'John', 'Doe', 'Newark, NJ', 'jdoe@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW()),
+('carfanatic', 'John', 'Doe', 'Newark, NJ', 'jdoe@email.com', '$2b$10$YCJI9MnFMPl.dcYCV3EMT.ZpcKcWJ7CanpAG1B2n4.Wwxz3CK4Vfi', NOW(), NOW()),
 
 ('coolride', 'Jane', 'Doe', 'Atlanta, GA', 'janedoe@email.com', '$2b$10$VKnIRLZSh8QBrEuoZneL6eyzl57gewLQJS.jUv9E7OLlpGxWdwQ0q', NOW(), NOW());
 

@@ -16,9 +16,9 @@ const getAllCars = async () => {
   }
 };
 
-const getOneCar = async () => {
+const getOneCar = async (id) => {
     try {
-      const oneCar = await db.any("SELECT * FROM cars WHERE id=$1", id);
+      const oneCar = await db.one("SELECT * FROM cars WHERE id=$1", id);
   
       return oneCar;
     } catch (error) {
@@ -36,10 +36,30 @@ const getOneCar = async () => {
     }
   };
 
+  const deleteCar = async (id) => {
+    try {
+      const deletedCar = await db.one("DELETE FROM cars WHERE id=$1 RETURNING *", id);
   
+      return deletedCar;
+    //   return user;
+    } catch (error) {
+      return error;
+    }
+  };
+
+// const deleteCar = async ({ user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite }) => {
+//     const query = `
+//         REMOVE FROM cars (user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
+//         VALUES ($1, $2, $3, $4, $5, $6, $7, $8,$9)
+//         RETURNING user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite; 
+//       `;
+//     const newUser = await db.one(query, [user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite]);
+//     console.log(newUser)
+//     return newUser;
+// }
 
 
-const findCarBycarId = async (carId) => {
+const findCarByCarId = async (carId) => {
   try {//match carId to schema???
     const query = "SELECT * FROM cars WHERE carId = $1";
 
@@ -52,17 +72,17 @@ const findCarBycarId = async (carId) => {
   }
 };
 
-const createCar = async ({ carId, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite }) => {
+const createCar = async ({ user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite }) => {
   const query = `
-      INSERT INTO cars (carId, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,$9, $10)
-      RETURNING carId, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite; 
+      INSERT INTO cars (user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,$9)
+      RETURNING user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite; 
     `;
-  const newUser = await db.one(query, [carId, id, user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite]);
+  const newUser = await db.one(query, [user_id, make, model, make_year, color, cylinders, price, image_path, is_favorite]);
+  console.log(newUser)
   return newUser;
 };
 
 module.exports = {
-  findCarBycarId,
-  createCar,getAllCars,getOneCar, getUserCars
+  findCarByCarId,  createCar,getAllCars,getOneCar, getUserCars, deleteCar
 };
