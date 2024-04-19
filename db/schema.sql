@@ -29,7 +29,7 @@ CREATE TABLE cars (
     model VARCHAR NOT NULL,
     make_year INTEGER NOT NULL,
     color VARCHAR,
-    cylinders VARCHAR NOT NULL,
+    cylinders  NOT NULL,
     price integer NOT NULL,
     image_path TEXT,
     is_favorite boolean
